@@ -1,11 +1,12 @@
 import React from "react";
+import StyledH1 from "./css/common_style";
 
 const App = () => {
     return (
         <>
-            <h1>
+            <StyledH1>
                 React Sample
-            </h1>
+            </StyledH1>
         </>
     )
 
