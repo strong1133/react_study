@@ -3,10 +3,21 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "development",
-  devtool: 'source-map',
+  devtool: "source-map",
   devServer: {
-    historyApiFallback: true,
-    port: 3000,
+    open: true,
     hot: true,
+    compress: true,
+    port: 3300,
+    historyApiFallback: true,
+    liveReload: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
 });

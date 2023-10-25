@@ -1,10 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   entry: "./src/index.tsx",
   // watch: true,
+
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     modules: [path.resolve(__dirname, "../../node_modules"), "node_modules"],
@@ -33,6 +35,9 @@ module.exports = {
     filename: "bundle.js",
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{ from: "static" }],
+    }),
     new HtmlWebpackPlugin({
       template: "./src/views/index.html",
     }),
