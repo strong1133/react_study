@@ -7,8 +7,8 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        est: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
